@@ -18,7 +18,7 @@
     justify-content: space-between;
     align-items: center;
 
-    a {
+    a, .dropbtn {
       color: inherit;
       text-decoration: none;
     }
@@ -45,21 +45,31 @@
 // top navigation
 .topnav {
 
-  a {
+  a, .dropbtn {
     display: block;
     margin: 0 1rem;
     -webkit-transition: none;
     transition: none;
   }
 
+  .dropbtn  {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0;
+    font-size: inherit;
+    background-color: inherit;
+  }
+
   .navbar {
     margin: 0;
     list-style-type: none;
     display: flex;
-    justify-content: flex-end;
     flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
 
-    li>a {
+    li>a, .dropbtn  {
       position: relative;
 
       &:before {
@@ -102,5 +112,15 @@
       }
     }
     .dropdown:hover .dropdown-content {display: block;}
+  }
+}
+
+// media
+@media screen and (max-width: map-get($width, media)) {
+  header {
+    flex-direction: column;
+  }
+  .header__title{
+    margin-bottom: 0.5rem
   }
 }
