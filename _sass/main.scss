@@ -1,0 +1,13 @@
+/* main theme*/
+@import "theme/theme";
+
+/* common */
+@import "common/variables";
+@import "common/functions";
+
+/* base */
+@import "base/base";
+
+/* Components */
+@import "base/header";
+@import "base/footer";

@@ -1,0 +1,24 @@
+// Colors
+$theme-color: #7CC7BB !default;
+$background-color: #282C34 !default;
+$text-color: #EAEAEA !default;
+$border-color: mix(#FFFFFF, $background-color, 20%) !default;
+
+$header-text-color: #C9D1D9 !default;
+$header-background-color: #252525 !default;
+$dropdown-text-color: #C9D1D9 !default;
+$dropdown-background-color: mix(#FFFFFF, $header-background-color, 5%)  !default;
+$footer-text-color: #C9D1D9 !default;
+$footer-background-color: #252525 !default;
+
+$code-background-color: #1D1F21 !default;
+$code-background-color-dark: #1D1F21 !default;
+
+// selection
+::selection {
+  background: #404040;
+}
+
+::-moz-selection {
+  background: #404040;
+}

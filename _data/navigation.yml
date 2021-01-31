@@ -1,0 +1,11 @@
+header:
+- title: Home
+  url: /
+
+- title: Blog
+  url: /blog
+
+- title: Notes
+  folders:
+    - title: Python
+      url: /notes/python

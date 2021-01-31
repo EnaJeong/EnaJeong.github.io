@@ -1,0 +1,106 @@
+/* HEADER */
+
+.page__header {
+  color: $header-text-color;
+  background-color: $header-background-color;
+  font-family: map-get($font-family, base);
+  font-size: map-get($font-size, header);
+
+  header {
+    padding: 1em;
+    max-width: map-get($width, medium);
+    min-height: 2em;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.header__title {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  .site-logo {
+    margin-right: 0.5rem;
+    max-height: 1.7rem;
+
+    img { max-height: inherit;}
+  }
+
+  .site-title {
+    font-weight: bold;
+  }
+}
+
+// top navigation
+.topnav {
+
+  a {
+    display: block;
+    margin: 0 1rem;
+    -webkit-transition: none;
+    transition: none;
+  }
+
+  .navbar {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    li>a {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 4px;
+        background: $theme-color;
+        width: 100%;
+        -webkit-transition: map-get($transition, all);
+        transition: map-get($transition, all);
+        -webkit-transform: scaleX(0) translate3d(0, 0, 0);
+        transform: scaleX(0) translate3d(0, 0, 0); // hide
+      }
+
+      &:hover:before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+
+    .dropdown {
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      width: max-content;
+      background-color: $dropdown-background-color;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: $dropdown-text-color;
+      padding: 10px;
+      text-align: left;
+      font-size: map-get($font-size, header-sub);
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+    .dropdown:hover .dropdown-content {display: block;}
+  }
+}

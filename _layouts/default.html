@@ -1,0 +1,28 @@
+---
+---
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    <div class="page__header">
+      <header>
+        {% include_cached header.html %}
+      </header>
+    </div>
+
+    <div class="page__content">
+      {{ content }}
+    </div>
+
+    <div class="page__footer">
+      <footer>
+        {% include_cached footer.html %}
+      </footer>
+    </div>
+
+  </body>
+</html>

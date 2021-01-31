@@ -1,0 +1,30 @@
+/* Base */
+
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  color: $text-color;
+  background-color: $background-color;
+  font-family: map-get($font-family, base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5em 0 0.5em;
+  font-weight: bold;
+}
+h1 {
+  margin-top: 0;
+  font-size: map-get($font-size, h1);
+}
+h2 {font-size: map-get($font-size, h2);}
+h3 {font-size: map-get($font-size, h3);}
+h4 {font-size: map-get($font-size, h4);}
+h5 {font-size: map-get($font-size, h5);}
+h6 {font-size: map-get($font-size, h6);}

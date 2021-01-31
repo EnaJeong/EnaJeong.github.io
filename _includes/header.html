@@ -1,0 +1,23 @@
+<div class="header__title">
+  {%- if site.logo -%}
+    <div class="site-logo"><img src="{{ site.logo }}" alt=""></div>
+  {%- endif -%}
+  <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+</div>
+<nav class="topnav">
+  <ul class="navbar">
+    {%- for item in site.data.navigation.header -%}
+        {%- if item.folders -%}
+          <li class="dropdown"><a class="dropbtn">{{ item.title }}</a>
+            <div class="dropdown-content">
+              {% for folder in item.folders %}
+                <a href="{{folder.url}}">{{folder.title}}</a>
+              {% endfor %}
+            </div>
+          </li>
+        {%- else -%}
+          <li class="topnav__menu"><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</nav>
