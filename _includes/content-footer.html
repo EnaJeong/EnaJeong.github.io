@@ -1,0 +1,33 @@
+<div class="page-info">
+  {%- if page.category -%}
+    <span>
+      <i class="fas fa-fw fa-folder"></i> <a href="javascript:void(0)">{{ page.category }}</a>
+    </span>
+  {%- endif -%}
+
+  {%- if page.tags[0] -%}
+    <span>
+      <i class="fas fa-fw fa-tags"></i>
+      {%- for tag in page.tags -%}
+        &nbsp;<a href="javascript:void(0)">{{ tag }}</a>
+      {%- endfor -%}
+    </span>
+  {%- endif -%}
+</div>
+
+<hr>
+
+<nav class="pagination">
+  <div class="pagination__previous">
+    {% if page.previous %}
+      <span>Previous</span>
+      <a href="{{ page.previous.url }}" class="pagination__page">{{ page.previous.title }}</a>
+    {% endif %}
+  </div>
+  <div class="pagination__next">
+    {% if page.next %}
+      <span>Next</span>
+      <a href="{{ page.next.url }}" class="pagination__page">{{ page.next.title }}</a>
+    {% endif %}
+  </div>
+</nav>

@@ -2,23 +2,23 @@
 ---
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+<html lang="{{ site.lang | default: "en" }}" class="no-js">
   <head>
     {% include head.html %}
   </head>
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
-    <div class="page__header">
+  <body class="layout--{{ page.layout }}">
+    <div class="header">
       <header>
         {% include_cached header.html %}
       </header>
     </div>
 
-    <div class="page__content">
+    <div class="container">
       {{ content }}
     </div>
 
-    <div class="page__footer">
+    <div class="footer">
       <footer>
         {% include_cached footer.html %}
       </footer>

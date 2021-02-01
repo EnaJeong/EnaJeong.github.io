@@ -1,0 +1,13 @@
+.layout--404 {
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main {text-align: center;}
+
+  h1 {font-size: 5em;}
+  p {font-size: 3em;}
+}

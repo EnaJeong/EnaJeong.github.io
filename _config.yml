@@ -24,6 +24,7 @@ github_username: EnaJeong
 
 # Additional
 logo: /favicon.ico
+lang: ko
 
 # Paginate
 paginate: 10 # amount of posts to show
@@ -40,6 +41,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-include-cache
+  - jemoji
 
 exclude:
   - Gemfile

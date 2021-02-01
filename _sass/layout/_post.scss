@@ -1,0 +1,21 @@
+.layout--post {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  aside {width: 15%;}
+  .content {
+    width: 70%;
+  }
+
+  @media (max-width: map-get($width, content)) {
+    aside {display: none;}
+    .content{width: 90%;}
+  }
+
+  @media (max-width: map-get($width, media)) {
+    .content{ padding: 1em;}
+  }
+}

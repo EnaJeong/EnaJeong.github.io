@@ -1,13 +1,18 @@
 /* main theme*/
 @import "theme/theme";
-
-/* common */
-@import "common/variables";
-@import "common/functions";
+@import "theme/highlight";
+@import "base/variables";
 
 /* base */
+@import "base/normalize";
 @import "base/base";
+@import "base/content";
 
 /* Components */
 @import "base/header";
 @import "base/footer";
+
+/* layout */
+@import "layout/404";
+@import "layout/post";
+@import "layout/blog";

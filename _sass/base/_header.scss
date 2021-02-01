@@ -1,6 +1,6 @@
 /* HEADER */
 
-.page__header {
+.header {
   color: $header-text-color;
   background-color: $header-background-color;
   font-family: map-get($font-family, base);
@@ -8,7 +8,7 @@
 
   header {
     padding: 1em;
-    max-width: map-get($width, medium);
+    max-width: map-get($width, header);
     min-height: 2em;
     margin-left: auto;
     margin-right: auto;
@@ -19,6 +19,7 @@
     align-items: center;
 
     a, .dropbtn {
+      padding: 0.25em 0;
       color: inherit;
       text-decoration: none;
     }
@@ -67,8 +68,8 @@
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
 
+    // menu
     li>a, .dropbtn  {
       position: relative;
 
@@ -91,9 +92,7 @@
       }
     }
 
-    .dropdown {
-      display: inline-block;
-    }
+    // dropdown menu
     .dropdown-content {
       display: none;
       position: absolute;
@@ -121,6 +120,6 @@
     flex-direction: column;
   }
   .header__title{
-    margin-bottom: 0.5rem
+    margin-bottom: 1rem
   }
 }

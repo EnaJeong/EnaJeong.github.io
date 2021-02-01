@@ -9,22 +9,133 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin: 0;
   color: $text-color;
   background-color: $background-color;
   font-family: map-get($font-family, base);
 }
 
+.container {
+  margin-bottom: auto;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  margin: 1.5em 0 0.5em;
+  margin: 24px 0 16px;
   font-weight: bold;
 }
-h1 {
-  margin-top: 0;
-  font-size: map-get($font-size, h1);
-}
+
+h1 {font-size: map-get($font-size, h1);}
 h2 {font-size: map-get($font-size, h2);}
 h3 {font-size: map-get($font-size, h3);}
 h4 {font-size: map-get($font-size, h4);}
 h5 {font-size: map-get($font-size, h5);}
 h6 {font-size: map-get($font-size, h6);}
+
+// p {margin-block-start: 0;}
+
+
+// link
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+// underline
+u, ins {
+  text-decoration: none;
+  border-bottom: 1px solid $text-color;
+}
+
+
+// list
+ul li, ol li {
+  margin-bottom: 0.3em;
+}
+li ul, li ol {
+  margin-top: 0.3em;
+}
+
+
+// horizontal ruler
+hr {
+  height: 0;
+  margin: 0.5em 0;
+  overflow: hidden;
+  border: 0;
+  border-bottom: 2px solid $border-color;
+}
+
+
+// pre: code block / kbd: keyboard input / samp: computer output
+code, pre, kbd, samp {
+  background-color: $code-background-color;
+}
+
+code, kbd, samp {
+  color: $code-text-color;
+  font-family: map-get($font-family, code);
+  font-size: map-get($font-size, code);
+  border-radius: 6px;
+  padding: 0.3em 0.6em;
+  margin: 0.2em;
+}
+
+pre {
+  padding: 1rem 0 1rem 1.3rem;
+  overflow: auto;
+  border-radius: 2px;
+
+  code {
+    padding: 0;
+    margin: 0;
+    color: $code-base-color;
+  }
+}
+
+
+// blockquote
+blockquote {
+  border-left: 0.25em solid $theme-color;
+  margin: 0;
+  padding-left: 1em;
+  color: $quote-text-color;
+}
+
+
+// table
+table {
+  display: block;
+  border-collapse: collapse;
+  overflow: auto;
+
+  & + table {
+    margin-top: 1em;
+  }
+}
+
+thead {
+  text-align: left;
+  background-color: darken($background-color, 3%);
+  border-bottom: 2px solid $background-color;
+}
+tbody {
+  background-color: lighten($background-color, 4%);
+}
+
+th, td {
+  padding: 0.5em 1em;
+  font-size: map-get($font-size, table);
+}
+td {border: 1.5px solid $background-color;}
+
+
+// figure
+figure {margin: 1em 0;}

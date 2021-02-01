@@ -1,18 +1,27 @@
 // Colors
 $theme-color: #7CC7BB !default;
+$text-color: #D1D1D1 !default;
 $background-color: #282C34 !default;
-$text-color: #EAEAEA !default;
-$border-color: mix(#FFFFFF, $background-color, 20%) !default;
+$border-color: lighten($background-color, 20%) !default;
 
 $header-text-color: #C9D1D9 !default;
 $header-background-color: #252525 !default;
 $dropdown-text-color: #C9D1D9 !default;
-$dropdown-background-color: mix(#FFFFFF, $header-background-color, 5%)  !default;
+$dropdown-background-color: lighten($header-background-color, 5%)  !default;
 $footer-text-color: #C9D1D9 !default;
 $footer-background-color: #252525 !default;
 
+$content-title-color: mix($theme-color, $text-color, 70%) !default;
+$content-info-color: $text-color!default;
+$content-separator-color: mix($theme-color, $border-color, 30%)!default;
+
+$link-color: #328DD9 !default;
+$link-visited-color: $link-color !default;
+
+$code-text-color: #B5C2D9 !default;
+$code-base-color: #C5C8C6 !default;
 $code-background-color: #1D1F21 !default;
-$code-background-color-dark: #1D1F21 !default;
+$quote-text-color: darken($text-color, 15%) !default;
 
 // selection
 ::selection {
