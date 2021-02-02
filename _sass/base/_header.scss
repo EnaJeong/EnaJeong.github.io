@@ -23,6 +23,8 @@
       color: inherit;
       text-decoration: none;
     }
+
+    ul li {margin: 0;}
   }
 }
 
@@ -116,10 +118,11 @@
 
 // media
 @media screen and (max-width: map-get($width, media)) {
-  header {
+  .header header {
     flex-direction: column;
+    padding: 0.5em;
   }
   .header__title{
-    margin-bottom: 1rem
+    margin: 0.25rem 0;
   }
 }

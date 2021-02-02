@@ -10,4 +10,8 @@
 
   h1 {font-size: 5em;}
   p {font-size: 3em;}
+
+  @media (max-width: map-get($width, media)) {
+    p {font-size: 2em;}
+  }
 }

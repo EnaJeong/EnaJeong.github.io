@@ -14,8 +14,8 @@ body {
   font-family: map-get($font-family, base);
 }
 
-.container {
-  margin-bottom: auto;
+.content {
+  flex-shrink: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {

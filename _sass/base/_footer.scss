@@ -1,6 +1,7 @@
 /* FOOTER */
 
 .footer {
+  margin-top: auto;
   width: 100%;
   color: $footer-text-color;
   background-color: $footer-background-color;
@@ -23,4 +24,11 @@
   font-family: map-get($font-family, base);
   font-size: map-get($font-size, footer);
   text-align: center;
+}
+
+// media
+@media screen and (max-width: map-get($width, media)) {
+  .footer footer {
+    padding: 1em;
+  }
 }
