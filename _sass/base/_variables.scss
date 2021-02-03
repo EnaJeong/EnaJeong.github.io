@@ -5,9 +5,11 @@ $font-family: (
 );
 
 $font-size: (
-  base:  16px,
-  code:  85%,
-  table: 85%,
+  base:   1em,
+  pre:    0.9em,
+  code:   0.85em,
+  table:  0.85em,
+  button: 0.9em,
 
   header:     1.25em,
   header-sub: 0.75em,
@@ -16,7 +18,7 @@ $font-size: (
   page-title: 2.5em,
   page-date:  0.8em,
   page-info:  1em,
-  page-tags:  90%,
+  page-tags:  0.9em,
 
   h1: 2em,
   h2: 1.8em,
@@ -24,6 +26,9 @@ $font-size: (
   h4: 1.4em,
   h5: 1.2em,
   h6: 1em,
+
+  m-title: 2.2em,
+  m-h1:    1.9em,
 );
 
 $width: (

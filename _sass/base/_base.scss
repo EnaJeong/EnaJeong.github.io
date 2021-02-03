@@ -14,7 +14,7 @@ body {
   font-family: map-get($font-family, base);
 }
 
-.content {
+.container {
   flex-shrink: 0;
 }
 
@@ -30,7 +30,34 @@ h4 {font-size: map-get($font-size, h4);}
 h5 {font-size: map-get($font-size, h5);}
 h6 {font-size: map-get($font-size, h6);}
 
-// p {margin-block-start: 0;}
+@media screen and (max-width: map-get($width, media)) {
+  h1 {font-size: map-get($font-size, m-h1);}
+}
+
+
+// button
+button {
+  font-size: map-get($font-size, button);
+  color: $button-color;
+  background-color: $button-background-color;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 0.4em 0.8em;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus, &.focused {
+    color: $button-background-color;
+    background-color: $theme-color;
+    border-color: $theme-color;
+  }
+
+  &:hover {
+    border-color: $theme-color;
+  }
+}
 
 
 // link
@@ -97,6 +124,7 @@ pre {
     padding: 0;
     margin: 0;
     color: $code-base-color;
+    font-size: map-get($font-size, pre);
   }
 }
 

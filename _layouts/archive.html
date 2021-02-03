@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<div class="main">
+  {{ content }}
+
+  {% assign site_categories = site.posts | map: "category" | compact %}
+  <section class="archive__category">
+    <ul class="categories">
+      <li>
+        <button type="button" class="category-button focused" onClick="showAllPosts()" data-category="all">All</button>
+      </li>
+      {%- for site_category in site_categories -%}
+      {%- assign _encoded = site_category | url_encode -%}
+        <li>
+          <button type="button" class="category-button" onClick="changePostState('{{ _encoded }}')" data-category="{{ _encoded }}">
+            {{ site_category }}
+          </button>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+
+  <section class="archive__posts">
+    {% assign post_years = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+    {% for year in post_years %}
+      <div class="archive-group" data-group="{{ year.name }}">
+        <h3 id="archive-{{ year.name }}" class="archive-group-name">{{ year.name }}</h3>
+        <ul>
+          {% for post in year.items %}
+            <li class="archive-post" data-category="{{ post.category | url_encode }}">
+              <span>{{ post.date | date: "%b %d" }}</span>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </section>
+</div>
+
+<script>
+  {%- include scripts/archive.js -%}
+</script>

@@ -79,3 +79,9 @@
     text-align: right;
   }
 }
+
+
+// media
+@media screen and (max-width: map-get($width, media)) {
+  .page-title {font-size: map-get($font-size, m-title);}
+}
