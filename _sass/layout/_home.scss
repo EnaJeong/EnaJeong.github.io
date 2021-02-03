@@ -2,10 +2,9 @@
 
   /* Reference: https://codepen.io/YusukeNakaya/pen/abNdeOj */
   $moonColor: #ffe645;
-  $moonSize: 65vh;
+  $moonSize: 65vmin;
 
   .container {
-    // flex-shrink: 1;
     height: 90vh;
     overflow: hidden;
     display: flex;
@@ -47,8 +46,10 @@
     position: relative;
     overflow: hidden;
     border-radius: 100%;
-    border: 1vh solid $moonColor;
+    border: 1vmin solid $moonColor;
     background-color: $moonColor;
+    /* fix safari border-radius and overflow hidden problem */
+    -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
   }
 
   .night {
@@ -75,6 +76,8 @@
     background: linear-gradient(-45deg, #0a1433 0%,#222b3f 100%);
     border-radius: 100%;
     overflow: hidden;
+    /* fix safari border-radius and overflow hidden problem */
+    -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
   }
 
   .star {
