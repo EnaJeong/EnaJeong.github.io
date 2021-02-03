@@ -10,11 +10,29 @@ var focusedBtn = {
   }
 };
 
-var changeGroupState = function(){
-  let groups = document.querySelectorAll(".archive-group");
+var changePostState = function(category) {
+  let doc = document;
+  focusedBtn.update(doc.querySelector(".category-button[data-category=" + category + "]"));
+
+  let posts = doc.querySelectorAll(".archive-post");
+  if (category === 'all') {
+    posts.forEach(function(post){
+      post.className = "archive-post";
+    });
+  } else {
+    posts.forEach(function(post){
+      if (post.getAttribute('data-category') != category){
+        post.className = "archive-post not-included"
+      } else {
+        post.className = "archive-post";
+      }
+    });
+  }
+
+  let groups = doc.querySelectorAll(".archive-group");
   groups.forEach(function(group){
     let groupId = "archive-" + group.getAttribute('data-group');
-    let groupName = document.getElementById(groupId);
+    let groupName = doc.getElementById(groupId);
 
     let posts = group.querySelectorAll(".archive-post:not(.not-included)");
     if (posts.length == 0) {
@@ -22,31 +40,5 @@ var changeGroupState = function(){
     } else {
       groupName.className = "archive-group-name";
     }
-  })
-}
-
-var showAllPosts = function(){
-  focusedBtn.update(document.querySelector(".category-button[data-category=all]"));
-
-  let posts = document.querySelectorAll(".archive-post");
-  posts.forEach(function(post){
-    post.className = "archive-post";
-  })
-
-  changeGroupState();
-}
-
-var changePostState = function(category) {
-  focusedBtn.update(document.querySelector(".category-button[data-category=" + category + "]"));
-
-  let posts = document.querySelectorAll(".archive-post");
-  posts.forEach(function(post){
-    if (post.getAttribute('data-category') != category){
-      post.className = "archive-post not-included"
-    } else {
-      post.className = "archive-post";
-    }
-  })
-
-  changeGroupState();
+  });
 }
