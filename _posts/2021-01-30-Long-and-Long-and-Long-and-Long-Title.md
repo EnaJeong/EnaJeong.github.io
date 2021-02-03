@@ -1,4 +1,5 @@
 ---
+category: "Long Category Name"
 title: '"Very Very Long and Long and Long Title"'
 ---
 

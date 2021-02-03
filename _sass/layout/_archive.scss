@@ -1,17 +1,12 @@
 .layout--archive {
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   ul {
     list-style-type: none;
     padding-left: 0;
   }
 
   .main {
-    width: map-get($width, content);
+    width: 70%;
+    margin: auto;
   }
 
   @media (max-width: map-get($width, content)) {

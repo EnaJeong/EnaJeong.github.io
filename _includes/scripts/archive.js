@@ -12,7 +12,7 @@ var focusedBtn = {
 
 var changePostState = function(category) {
   let doc = document;
-  focusedBtn.update(doc.querySelector(".category-button[data-category=" + category + "]"));
+  focusedBtn.update(doc.querySelector(".category-button[data-category='" + category + "']"));
 
   let posts = doc.querySelectorAll(".archive-post");
   if (category === 'all') {

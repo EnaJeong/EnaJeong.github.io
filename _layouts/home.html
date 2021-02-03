@@ -3,3 +3,21 @@ layout: default
 ---
 
 {{ content }}
+<div class='viewer'>
+  <div class='moon'>
+    <div class='night'>
+      <div class='window'>
+        {% for i in (1..2) %}
+          <div class='stars'>
+            {%- for i in (1..30) -%}
+              <div class="shooting"></div>
+            {%- endfor -%}
+            {%- for i in (1..250) -%}
+              <div class="star"></div>
+            {%- endfor -%}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

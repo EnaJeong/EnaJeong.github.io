@@ -5,7 +5,7 @@ layout: default
 <div class="main">
   {{ content }}
 
-  {% assign site_categories = site.posts | map: "category" | compact %}
+  {% assign site_categories = site.posts | map: "category" | compact | uniq %}
   <section class="archive__category">
     <ul class="categories">
       <li>
