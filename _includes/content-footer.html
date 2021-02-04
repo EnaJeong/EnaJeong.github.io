@@ -1,7 +1,8 @@
 <div class="page-info">
   {%- if page.category -%}
     <span>
-      <i class="fas fa-fw fa-folder"></i> <a href="javascript:void(0)">{{ page.category }}</a>
+      <i class="fas fa-fw fa-folder"></i>
+      <a class="page-category" href="/blog.html#{{ page.category | url_encode }}">{{ page.category }}</a>
     </span>
   {%- endif -%}
 
@@ -9,7 +10,7 @@
     <span>
       <i class="fas fa-fw fa-tags"></i>
       {%- for tag in page.tags -%}
-        &nbsp;<a href="javascript:void(0)">{{ tag }}</a>
+        &nbsp;<a class="page-tag" href="javascript:void(0)">{{ tag }}</a>
       {%- endfor -%}
     </span>
   {%- endif -%}

@@ -9,12 +9,12 @@ layout: default
   <section class="archive__category">
     <ul class="categories">
       <li>
-        <button type="button" class="category-button focused" onClick="changePostState('all')" data-category="all">All</button>
+        <button type="button" class="category-button focused" onClick="Archive.changeState('all')" data-category="all">All</button>
       </li>
       {%- for site_category in site_categories -%}
       {%- assign _encoded = site_category | url_encode -%}
         <li>
-          <button type="button" class="category-button" onClick="changePostState('{{ _encoded }}')" data-category="{{ _encoded }}">
+          <button type="button" class="category-button" onClick="Archive.changeState('{{ _encoded }}')" data-category="{{ _encoded }}">
             {{ site_category }}
           </button>
         </li>

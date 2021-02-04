@@ -12,9 +12,12 @@
     align-items: center;
   }
 
+  @media (max-width: map-get($width, media)) {
+    .container {height: 85vh;}
+  }
+
   .viewer {
     position: relative;
-    background: $background-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,33 +25,20 @@
     &::before {
       content: '';
       position: absolute;
-      bottom: -3%;
-      left: -12%;
-      width: 75%;
+      bottom: -5%;
+      left: -7%;
+      width: 70%;
       height: 6%;
-      background: mix($background-color, $moonColor, 60%);
+      background: darken($background-color, 5%);
       border-radius: 100%;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 38%;
-      width: 110%;
-      height: 100%;
-      background: $background-color;
-      border-radius: 100%;
-      transform: scale(1.1);
     }
   }
 
   .moon {
     position: relative;
-    overflow: hidden;
     border-radius: 100%;
     border: 1vmin solid $moonColor;
     background-color: $moonColor;
-    /* fix safari border-radius and overflow hidden problem */
     -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
   }
 
@@ -60,10 +50,11 @@
     &::after {
       content: '';
       position: absolute;
-      left: 35%;
-      width: 100%;
+      left: 40%;
+      width: 90%;
       height: 100%;
-      background: $moonColor;
+      background: $background-color;
+      border: 1vmin solid $moonColor;
       border-radius: 100%;
       transform: scale(1.1);
     }

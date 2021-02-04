@@ -50,6 +50,14 @@
     border-radius: 6px;
     padding: 0.3em 0.5em;
     margin: 0 0.2em;
+  }
+
+  .page-category:hover {
+    border-color: $theme-color;
+  }
+
+  .page-tag {
+    cursor: default;
 
     &:hover {
       text-decoration: none;
