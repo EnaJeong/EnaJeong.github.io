@@ -11,7 +11,7 @@
   h1 {font-size: 5em;}
   p {font-size: 3em;}
 
-  @media (max-width: map-get($breakpoint, media)) {
+  @media (max-width: map-get($breakpoint, medium)) {
     p {font-size: 2em;}
   }
 }
