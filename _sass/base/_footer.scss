@@ -27,7 +27,7 @@
 }
 
 // media
-@media screen and (max-width: map-get($width, media)) {
+@media screen and (max-width: map-get($breakpoint, medium)) {
   .footer footer {
     padding: 1em;
   }

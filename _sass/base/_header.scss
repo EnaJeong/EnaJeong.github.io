@@ -117,7 +117,7 @@
 }
 
 // media
-@media screen and (max-width: map-get($width, media)) {
+@media screen and (max-width: map-get($breakpoint, medium)) {
   .header header {
     flex-direction: column;
     padding: 0.5em;

@@ -12,6 +12,7 @@
   line-height: 1.5;
 
   h1, h2 {
+    color: $content-title-color;
     border-bottom: 1px solid $border-color;
   }
 }
@@ -90,6 +91,6 @@
 
 
 // media
-@media screen and (max-width: map-get($width, media)) {
+@media screen and (max-width: map-get($breakpoint, medium)) {
   .page-title {font-size: map-get($font-size, m-title);}
 }

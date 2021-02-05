@@ -32,7 +32,11 @@ $font-size: (
 );
 
 $width: (
-  media:   600px,
+  header:  900px,
+);
+
+$breakpoint: (
+  medium:  600px,
   header:  900px,
   content: 900px,
 );

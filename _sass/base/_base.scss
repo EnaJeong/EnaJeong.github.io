@@ -31,7 +31,7 @@ h4 {font-size: map-get($font-size, h4);}
 h5 {font-size: map-get($font-size, h5);}
 h6 {font-size: map-get($font-size, h6);}
 
-@media screen and (max-width: map-get($width, media)) {
+@media screen and (max-width: map-get($breakpoint, medium)) {
   h1 {font-size: map-get($font-size, m-h1);}
 }
 
@@ -153,6 +153,7 @@ table {
 thead {
   text-align: left;
   background-color: darken($background-color, 3%);
+  border: 1px solid $background-color;
   border-bottom: 2px solid $background-color;
 }
 tbody {

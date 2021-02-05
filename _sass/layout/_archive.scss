@@ -9,7 +9,7 @@
     margin: auto;
   }
 
-  @media (max-width: map-get($width, content)) {
+  @media (max-width: map-get($breakpoint, content)) {
     .main{width: 90%;}
   }
 }

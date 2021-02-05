@@ -12,7 +12,7 @@
     align-items: center;
   }
 
-  @media (max-width: map-get($width, media)) {
+  @media (max-width: map-get($breakpoint, medium)) {
     .container {height: 85vh;}
   }
 

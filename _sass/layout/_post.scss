@@ -10,12 +10,12 @@
     width: 70%;
   }
 
-  @media (max-width: map-get($width, content)) {
+  @media (max-width: map-get($breakpoint, content)) {
     aside {display: none;}
     .content{width: 90%;}
   }
 
-  @media (max-width: map-get($width, media)) {
+  @media (max-width: map-get($breakpoint, medium)) {
     .content{ padding: 1em;}
   }
 }
