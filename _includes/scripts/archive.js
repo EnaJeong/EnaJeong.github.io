@@ -2,8 +2,7 @@ const Archive = {
   lastFocusedBtn : document.querySelector(".category-button[data-category=all]"),
 
   changeState(category) {
-    let doc = document;
-    let btn = doc.querySelector(`.category-button[data-category='${category}']`);
+    let btn = document.querySelector(`.category-button[data-category='${category}']`);
 
     if (Archive.lastFocusedBtn == btn){
       return;
@@ -13,22 +12,40 @@ const Archive = {
     btn.className = "category-button focused";
     Archive.lastFocusedBtn = btn;
 
-    let posts = doc.querySelectorAll(".archive-post");
     switch (category) {
       case 'all': {
-        for (let i=0, n=posts.length; i < n; i++){
-          posts[i].className = "archive-post";
-        }
+        Archive.viewAll();
         break;
       }
       default: {
-        for (let i=0, n=posts.length; i < n; i++){
-          if (posts[i].getAttribute('data-category') != category){
-            posts[i].className = "archive-post not-included";
-          } else {
-            posts[i].className = "archive-post";
-          }
-        }
+        Archive.viewSome(category);
+      }
+    }
+  },
+
+  viewAll(){
+    let doc = document;
+
+    let posts = doc.querySelectorAll(".archive-post.not-included");
+    for (let i=0, n=posts.length; i < n; i++){
+      posts[i].className = "archive-post";
+    }
+
+    let groupNames = doc.querySelectorAll(".archive-group-name.not-included");
+    for (let i=0, n=groupNames.length; i < n; i++){
+      groupNames[i].className = "archive-group-name";
+    }
+  },
+
+  viewSome(category){
+    let doc = document;
+
+    let posts = doc.querySelectorAll(".archive-post");
+    for (let i=0, n=posts.length; i < n; i++){
+      if (posts[i].getAttribute('data-category') != category){
+        posts[i].className = "archive-post not-included";
+      } else {
+        posts[i].className = "archive-post";
       }
     }
 
