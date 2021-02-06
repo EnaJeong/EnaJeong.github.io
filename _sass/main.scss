@@ -1,14 +1,14 @@
 /* main theme*/
 @import "theme/theme";
 @import "theme/highlight";
-@import "base/variables";
 
 /* base */
+@import "base/variables";
 @import "base/normalize";
 @import "base/base";
-@import "base/content";
 
-/* Components */
+/* components */
+@import "base/content";
 @import "base/header";
 @import "base/footer";
 

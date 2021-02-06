@@ -26,10 +26,6 @@ github_username: EnaJeong
 logo: /favicon.ico
 lang: ko
 
-# Paginate
-paginate: 10 # amount of posts to show
-paginate_path: /page:num/
-
 
 # Build settings
 markdown: kramdown
@@ -37,9 +33,7 @@ highlighter: rouge
 
 plugins:
   - jekyll-feed
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-include-cache
   - jemoji
 

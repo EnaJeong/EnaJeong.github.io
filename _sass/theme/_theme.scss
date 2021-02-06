@@ -4,18 +4,18 @@ $text-color: #D1D1D1 !default;
 $background-color: #282C34 !default;
 $border-color: lighten($background-color, 20%) !default;
 
-$link-color: #328DD9 !default;
-$link-visited-color: $link-color !default;
-
-$button-color: #C9D1D9 !default;
-$button-background-color: #252525 !default;
-
 $header-text-color: #C9D1D9 !default;
 $header-background-color: #252525 !default;
 $dropdown-text-color: #C9D1D9 !default;
 $dropdown-background-color: lighten($header-background-color, 5%)  !default;
 $footer-text-color: #C9D1D9 !default;
 $footer-background-color: #252525 !default;
+
+$link-color: #328DD9 !default;
+$link-visited-color: $link-color !default;
+
+$button-color: #C9D1D9 !default;
+$button-background-color: #252525 !default;
 
 $content-title-color: mix($theme-color, $text-color, 70%) !default;
 $content-info-color: $text-color!default;

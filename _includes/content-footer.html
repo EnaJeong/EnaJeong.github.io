@@ -18,17 +18,26 @@
 
 <hr>
 
+{%- assign group = site.categories[page.category] -%}
+{%- for article in group -%}
+  {%- if article.title == page.title -%}
+    {%- assign nextIdx = forloop.index0 | minus:1 -%}
+    {%- assign prevIdx = forloop.index -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
 <nav class="pagination">
   <div class="pagination__previous">
-    {% if page.previous %}
+    {%- if prevIdx < group.size -%}
       <span>Previous</span>
-      <a href="{{ page.previous.url }}" class="pagination__page">{{ page.previous.title }}</a>
+      <a href="{{ group[prevIdx].url }}" class="pagination__page">{{ group[prevIdx].title }}</a>
     {% endif %}
   </div>
   <div class="pagination__next">
-    {% if page.next %}
+    {%- if nextIdx >= 0 -%}
       <span>Next</span>
-      <a href="{{ page.next.url }}" class="pagination__page">{{ page.next.title }}</a>
+      <a href="{{ group[nextIdx].url }}" class="pagination__page">{{ group[nextIdx].title }}</a>
     {% endif %}
   </div>
 </nav>
