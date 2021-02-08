@@ -9,13 +9,15 @@
 
 .content__main {
   margin: 1.5em 0;
-  line-height: 1.5;
+  line-height: 1.7;
 
   h1, h2 {
     color: $content-title-color;
     border-bottom: 1px solid $border-color;
   }
 }
+
+.content__footer {margin-top: 3em;}
 
 .page-title {
   color: $content-title-color;
@@ -36,10 +38,10 @@
 .page-info {
   color: $content-info-color;
   font-size: map-get($font-size, page-info);
-  margin-top: 3em;
   text-align: left;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 6em;
 
   span {
     margin: 0 1em 0.5em 0;
@@ -66,7 +68,7 @@
   }
 }
 
-.content__footer .pagination {
+.pagination {
   display:flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -91,7 +93,7 @@
 
 .utterances {
   max-width: 900px;
-  margin-top: 4em;
+  margin-top: 3em;
 }
 
 

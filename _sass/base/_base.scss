@@ -26,6 +26,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 24px 0 16px;
   font-weight: bold;
+
+  code {
+    vertical-align: text-bottom;
+  }
 }
 
 h1 {font-size: map-get($font-size, h1);}
@@ -77,6 +81,8 @@ a {
   &:hover {
     text-decoration: underline;
   }
+
+  code {color: inherit;}
 }
 
 
@@ -154,21 +160,27 @@ table {
   }
 }
 
-thead {
+th {
   text-align: left;
   background-color: darken($background-color, 3%);
-  border: 1px solid $background-color;
-  border-bottom: 2px solid $background-color;
 }
-tbody {
+td {
   background-color: lighten($background-color, 4%);
 }
 
 th, td {
   padding: 0.5em 1em;
   font-size: map-get($font-size, table);
+  border: 1.5px solid $background-color;
 }
-td {border: 1.5px solid $background-color;}
+
+thead {
+  border: 1px solid $background-color;
+  border-bottom: 2px solid $background-color;
+
+  th {border: none;}
+}
+tbody th {font-weight: normal;}
 
 
 // figure

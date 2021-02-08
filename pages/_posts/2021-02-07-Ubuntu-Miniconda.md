@@ -1,5 +1,5 @@
 ---
-category: Ubuntu
+category: 'Ubuntu App'
 tags: ['Miniconda']
 title: Ubuntu 앱에 Miniconda 설치 및 세팅
 ---
@@ -11,6 +11,8 @@ title: Ubuntu 앱에 Miniconda 설치 및 세팅
 <br>
 
 ## Miniconda 설치파일 다운로드
+
+우선 다운로드받을 폴더로 이동한다.
 
 [Miniconda - installer](https://docs.conda.io/en/latest/miniconda.html#linux-installers)에서 최신 버전을 다운로드한다.
 

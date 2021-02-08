@@ -43,6 +43,14 @@ exclude:
 keep_files:
   - .git
 
+
+collections_dir: pages
+
+collections:
+  python:
+    output: true
+    permalink: /:collection/:title
+
 defaults:
   # _posts
   - scope:
@@ -50,3 +58,9 @@ defaults:
       type: posts
     values:
         layout: post
+  # others
+  - scope:
+      path: ""
+      type: "python"
+    values:
+        layout: page
