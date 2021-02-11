@@ -1,0 +1,24 @@
+<button id="openbtn" type="button" onClick="SideNav.openNav()">&#9776;</button>
+
+<nav class="sidenav" id="sidenav">
+  <div class="sidenav__head">
+    <h4 class="collection"> {{ page.collection | capitalize }} </h4>
+      <span class="closebtn" onclick="SideNav.closeNav()">&times;</span>
+  </div>
+  {%- assign _groups = site[page.collection] | group_by: "category" -%}
+  {%- for _group in _groups -%}
+    {%- if _group.name == "" -%}
+      {%- continue -%}
+    {%- endif -%}
+    <h5 class="section__header"> {{ _group.name }} </h5>
+    <ul class="section__items">
+      {%- for item in _group.items -%}
+        <li class="section__item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+  {%- endfor -%}
+</nav>
+
+<script>
+  {%- include scripts/sidenav.js -%}
+</script>

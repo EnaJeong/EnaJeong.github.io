@@ -1,0 +1,18 @@
+---
+layout: page
+---
+
+{{ content }}
+
+{%- assign _groups = site[page.collection] | group_by: "category" -%}
+{%- for _group in _groups -%}
+  {%- if _group.name == "" -%}
+    {%- continue -%}
+  {%- endif -%}
+  <h2> {{ _group.name }} </h2>
+  <ul>
+    {%- for item in _group.items -%}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {%- endfor -%}
+  </ul>
+{%- endfor -%}

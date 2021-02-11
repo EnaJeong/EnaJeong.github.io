@@ -15,6 +15,9 @@ body {
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+
   /* for safari */
   flex-shrink: 0;
 }

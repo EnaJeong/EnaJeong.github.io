@@ -1,0 +1,9 @@
+.main {
+  width: 70%;
+  margin: auto;
+  padding-bottom: 1.5rem;
+}
+
+@media (max-width: map-get($breakpoint, content)) {
+  .main{width: 90%;}
+}

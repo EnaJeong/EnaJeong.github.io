@@ -407,7 +407,7 @@ flex-shrink: 0;
 
 그리고 다음과 같은 일들이 추가로 남아있다.
 
-- Collection 만들기 (내 블로그의 Notes)
+- ~~Collection 만들기 (내 블로그의 Notes)~~
 - toc 추가
 - 코드 highlighter 변경
 

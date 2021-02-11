@@ -3,17 +3,21 @@ layout: default
 ---
 
 <aside class="aside-left">
+  {% include sidenav.html %}
 </aside>
 
 <div class="content">
   <div class="content__header">
-    {% include post-header.html %}
+    <div class="headline">
+      <h1 class="page-title">{{ page.title | smartify}}</h1>
+    </div>
+    <hr>
   </div>
   <div class="content__main">
     {{ content }}
   </div>
   <div class="content__footer">
-    {% include post-footer.html %}
+    {% include page-footer.html %}
   </div>
 </div>
 

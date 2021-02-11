@@ -8,12 +8,15 @@
 @import "base/base";
 
 /* components */
+@import "base/main";
 @import "base/content";
 @import "base/header";
 @import "base/footer";
+@import "base/sidenav";
 
 /* layout */
 @import "layout/404";
 @import "layout/home";
 @import "layout/post";
+@import "layout/page";
 @import "layout/archive";

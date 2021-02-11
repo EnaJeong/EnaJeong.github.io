@@ -1,0 +1,16 @@
+<hr>
+
+<nav class="pagination">
+  <div class="pagination__previous">
+    {% if page.previous %}
+      <span>Previous</span>
+      <a href="{{ page.previous.url }}" class="pagination__page">{{ page.previous.title }}</a>
+    {% endif %}
+  </div>
+  <div class="pagination__next">
+    {% if page.next %}
+      <span>Next</span>
+      <a href="{{ page.next.url }}" class="pagination__page">{{ page.next.title }}</a>
+    {% endif %}
+  </div>
+</nav>

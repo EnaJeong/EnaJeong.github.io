@@ -3,7 +3,7 @@ header:
   url: /
 
 - title: Blog
-  url: /blog.html
+  url: /blog
 
 - title: Notes
   folders:

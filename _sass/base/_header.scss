@@ -9,7 +9,7 @@
   header {
     padding: 1em;
     max-width: map-get($width, header);
-    min-height: 2em;
+    min-height: map-get($height, header);
     margin-left: auto;
     margin-right: auto;
 

@@ -1,11 +1,15 @@
-.layout--post {
+.layout--page, .layout--collection {
   aside {width: 15%;}
   .content {
     width: 70%;
   }
 
+  .page-title {
+    margin: 0.5em 0;
+  }
+
   @media (max-width: map-get($breakpoint, content)) {
-    aside {display: none;}
+    aside {width: 0;}
     .content{width: 90%;}
   }
 

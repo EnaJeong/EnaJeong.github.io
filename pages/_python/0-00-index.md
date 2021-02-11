@@ -1,7 +1,7 @@
 ---
-layout: 404
+layout: collection
 title: Python
-slug: ""
+slug: "index"
 ---
 
-준비중 입니다 :)
+Python 3.8을 기준으로 작성하였습니다.
