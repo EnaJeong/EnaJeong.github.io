@@ -44,15 +44,19 @@
     border-bottom: 1px solid $border-color;
   }
   .section__items {
-    list-style-type: none;
+    li {margin-bottom: 0.5em;}
+
+    .active a {
+      border-left: 0.2em solid $theme-color;
+      padding-left: 0.4em;
+      color: darken($text-color, 20%);
+    }
   }
 
   a {
     color: $text-color;
-    margin-left: 0.5em;
+    padding-left: 0.6em;
     display: block;
     transition: 0.3s;
   }
-
-  ul {padding-left: 0;}
 }

@@ -1,162 +1,146 @@
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 
+/* Atom One Dark Theme
+https://github.com/atom/one-dark-syntax
+*/
+
+$one-dark: (
+  mono-1:  hsl(220, 14%, 71%), // default text
+  mono-2:  hsl(220,  9%, 55%),
+  mono-3:  hsl(220, 10%, 40%),
+
+  hue-1:   hsl(187, 47%, 55%), // <-cyan
+  hue-2:   hsl(207, 82%, 66%), // <-blue
+  hue-3:   hsl(286, 60%, 67%), // <-purple
+  hue-4:   hsl( 95, 38%, 62%), // <-green
+  hue-5:   hsl(355, 65%, 65%), // <-red 1
+  hue-5-2: hsl(  5, 48%, 51%), // <-red 2
+  hue-6:   hsl( 29, 54%, 61%), // <-orange 1
+  hue-6-2: hsl( 39, 67%, 69%), // <-orange 2
+
+  /* custom color */
+  custom-orange:        #DB907F,
+  custom-blue:          #4585D0,
+  // custom-mint:          #83A598,
+  custom-purple:        #AE81FF,
+  // custom-lavender:      #C5A5C5,
+  custom-lightskyblue:  #B5C2D9,
+);
+
 .highlight {
-  .vc, .nn, .nl, .ni, .bp, .vg, .vi, .nv, .vm, .w, .py, .nx {
-    color: inherit;
-    background-color: inherit;
+
+  // whitespace, other, unkown
+  .w, , .x, .vm {
   }
+  // punctuation
+  .p {color: map-get($one-dark, custom-lightskyblue);}
+
+  // error
+  .err {
+    color: #960050;
+  }
+
+  /* comment */
+  // single line, multiline, preproc, single, Special
+  // unknown, unknown, unknown
+  .c, .cm, .cp, .c1, .cs, .ch, .cd, .cpf {
+    color: map-get($one-dark, mono-3);
+    font-style: italic;
+  }
+
+  /* keyword */
+  // any, unknown, Constant, Declaration, reserved
+  .k, .kv, .kc , .kd , .kr {
+    color: map-get($one-dark, hue-3);
+  }
+  // Type, Namespace, Pseudo
+  .kt, .kn, .kp {
+    color: map-get($one-dark, hue-6-2);
+  }
+
+  /* name */
+  // Variable/ function names, label, namespace, property, exception, other
+  .n, .nl, .nn, .py, .ne, .nv, .nx {
+  }
+  // Builtin
+  .nb {
+    color: map-get($one-dark, hue-1);
+  }
+  // function
+  .nf {
+    color: map-get($one-dark, hue-2);
+  }
+  // tag, variable, class variable, global variable, instance variable
+  .nt, .vc, .vg, .vi {
+    color: map-get($one-dark, hue-5);
+  }
+  // Builtin Pseudo, attribute, Constants, entity, unknown
+  .bp, .na, .no, .ni, .fm {
+    color: map-get($one-dark, hue-6);
+  }
+  // class
+  .nc, .nd {
+    color: map-get($one-dark, hue-6-2);
+  }
+
+  /* literal */
+  // any, date
+  .l, .ld {
+    color: map-get($one-dark, hue-4);
+  }
+
+  /* literal - string */
+  // string, backtick, char, doc, double, escape
+  // heredoc, interpol, other, single
+  // unknown, unknown
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1, .sa, .dl  {
+    color: map-get($one-dark, hue-4);
+  }
+  // regex, , symbol
+  .sr, .ss {
+    color: map-get($one-dark, hue-1);
+  }
+
+  /* literal - number */
+  // any, float, hex, integer, long integer, oct, hex, bin
+  .m, .mf, .mh, .mi, .il, .mo, .mx, .mb {
+    color: map-get($one-dark, custom-orange);
+  }
+
+  /* operator */
+  // operator, word operator (e.g. and)
+  .o {color: map-get($one-dark, custom-blue);}
+  .ow {color: map-get($one-dark, custom-purple);}
+
+  /* generic */
+  // unstyle, line numbers
+  .g, .gl {
+  }
+  // error, traceback
+  .gr, .gt {
+    color: #960050;
+  }
+  // deleted, inserted
+  .gd, .gi {
+    color: #49483e;
+  }
+  // headline
+  .gh {
+    color: #999999;
+  }
+  // subheadline
+  .gu {color: #aaaaaa;}
+  // output, prompt
+  .go, .gp {
+    color: #888888;
+  }
+  // emphasized
+  .ge {}
+  // strong (bold)
+  .gs {font-weight: bold;}
 }
 
-.highlight .gh {
-  color: #999999;
-}
-.highlight .sr {
-  color: #f6aa11;
-}
-.highlight .go {
-  color: #888888;
-}
-.highlight .gp {
-  color: #555555;
-}
-.highlight .gs {
-}
-.highlight .gu {
-  color: #aaaaaa;
-}
-.highlight .nb {
-  color: #f6aa11;
-}
-.highlight .cm {
-  color: #75715e;
-}
-.highlight .cp {
-  color: #75715e;
-}
-.highlight .c1 {
-  color: #75715e;
-}
-.highlight .cs {
-  color: #75715e;
-}
-.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
-  color: #75715e;
-}
-.highlight .err {
-  color: #960050;
-}
-.highlight .gr {
-  color: #960050;
-}
-.highlight .gt {
-  color: #960050;
-}
-.highlight .gd {
-  color: #49483e;
-}
-.highlight .gi {
-  color: #49483e;
-}
-.highlight .ge {
-  color: #49483e;
-}
-.highlight .kc {
-  color: #66d9ef;
-}
-.highlight .kd {
-  color: #66d9ef;
-}
-.highlight .kr {
-  color: #66d9ef;
-}
-.highlight .no {
-  color: #66d9ef;
-}
-.highlight .kt {
-  color: #66d9ef;
-}
-.highlight .mf {
-  color: #ae81ff;
-}
-.highlight .mh {
-  color: #ae81ff;
-}
-.highlight .il {
-  color: #ae81ff;
-}
-.highlight .mi {
-  color: #ae81ff;
-}
-.highlight .mo {
-  color: #ae81ff;
-}
-.highlight .m, .highlight .mb, .highlight .mx {
-  color: #ae81ff;
-}
-.highlight .sc {
-  color: #ae81ff;
-}
-.highlight .se {
-  color: #ae81ff;
-}
-.highlight .ss {
-  color: #ae81ff;
-}
-.highlight .sd {
-  color: #e6db74;
-}
-.highlight .s2 {
-  color: #e6db74;
-}
-.highlight .sb {
-  color: #e6db74;
-}
-.highlight .sh {
-  color: #e6db74;
-}
-.highlight .si {
-  color: #e6db74;
-}
-.highlight .sx {
-  color: #e6db74;
-}
-.highlight .s1 {
-  color: #e6db74;
-}
-.highlight .s, .highlight .sa, .highlight .dl {
-  color: #e6db74;
-}
-.highlight .na {
-  color: #a6e22e;
-}
-.highlight .nc {
-  color: #a6e22e;
-}
-.highlight .nd {
-  color: #a6e22e;
-}
-.highlight .ne {
-  color: #a6e22e;
-}
-.highlight .nf, .highlight .fm {
-  color: #a6e22e;
-}
-.highlight .ow {
-  color: #f92672;
-}
-.highlight .nt {
-  color: #f92672;
-}
-.highlight .k, .highlight .kv {
-  color: #f92672;
-}
-.highlight .kn {
-  color: #f92672;
-}
-.highlight .kp {
-  color: #f92672;
-}
-.highlight .o {
-  color: #f92672;
+.language-java {
+  .o {color: inherit;} 
 }

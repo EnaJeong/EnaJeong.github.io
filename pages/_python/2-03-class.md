@@ -57,6 +57,7 @@ class MyClass:
 i = MyClass()       # create a new instance of the class and assign this object to i
 print(i.v)          # data attribute
 print(i.f())        # method
+print()
 ```
 ```
 12345
@@ -152,7 +153,7 @@ Hello!
 
 ```python
 class Calculator:
-    def add(sef, x, y):
+    def add(self, x, y):
         return x + y
 
 

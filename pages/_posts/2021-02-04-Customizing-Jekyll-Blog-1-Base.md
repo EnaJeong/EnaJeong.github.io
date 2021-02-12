@@ -409,7 +409,7 @@ flex-shrink: 0;
 
 - ~~Collection 만들기 (내 블로그의 Notes)~~
 - toc 추가
-- 코드 highlighter 변경
+- ~~코드 highlighter 변경~~
 
 <br>
 

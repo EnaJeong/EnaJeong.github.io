@@ -1,4 +1,4 @@
-<button id="openbtn" type="button" onClick="SideNav.openNav()"><span>&#9776;</span></button>
+<button id="openbtn" type="button" onClick="SideNav.openNav()">&#9776;</button>
 
 <nav class="sidenav" id="sidenav">
   <div class="sidenav__head">
@@ -13,7 +13,11 @@
     <h5 class="section__header"> {{ _group.name }} </h5>
     <ul class="section__items">
       {%- for item in _group.items -%}
-        <li class="section__item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {%- if item.title == page.title -%}
+          <li class="section__item active"><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {%- else -%}
+          <li class="section__item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {%- endif -%}
       {%- endfor -%}
     </ul>
   {%- endfor -%}
