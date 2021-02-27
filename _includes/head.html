@@ -21,3 +21,19 @@
 <!-- style -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.2/css/all.css">
+
+<!-- MathJax -->
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']]
+  },
+  chtml: {
+    displayAlign: 'left',        // default for indentalign when set to 'auto'
+    displayIndent: '1em'         // default for indentshift when set to 'auto'
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>

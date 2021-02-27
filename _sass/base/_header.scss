@@ -68,6 +68,7 @@
     margin: 0;
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-end;
 
     // menu
     li>a, .dropbtn  {

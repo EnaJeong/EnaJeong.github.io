@@ -162,24 +162,21 @@ table {
   display: block;
   border-collapse: collapse;
   overflow: auto;
+  text-align: left;
 
   & + table {
     margin-top: 1em;
   }
 }
 
-th {
-  text-align: left;
-  background-color: darken($background-color, 3%);
-}
-td {
-  background-color: lighten($background-color, 4%);
-}
+th {background-color: darken($background-color, 3%);}
+td {background-color: lighten($background-color, 4%);}
 
 th, td {
   padding: 0.5em 1em;
   font-size: map-get($font-size, table);
   border: 1.5px solid $background-color;
+  text-align: inherit;
 }
 
 thead {
@@ -195,6 +192,7 @@ tbody th {font-weight: normal;}
 figure {margin: 1em 0;}
 
 img:not(.emoji) {
-    max-width: 100%;
-    vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }

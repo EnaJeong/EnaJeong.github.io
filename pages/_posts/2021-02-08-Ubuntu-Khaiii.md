@@ -71,7 +71,7 @@ subprocess.check_call('make all large_resource', cwd=build_dir, shell=True)
 
 <br>
 
-`KhaiiiApi` 객체를 생성할 때 `rcs_dir` 인자로 리소스 디렉토리를 지정할 수 있기 때문에 두 모델 모두 사용이 가능하지만, 경로를 지정하는 건 번거로울 수 있으니 더 자주 사용할 모델로 생성하면 될 것 같다.
+`KhaiiiApi` 객체를 생성할 때 `rsc_dir` 인자로 리소스 디렉토리를 지정할 수 있기 때문에 두 모델 모두 사용이 가능하지만, 경로를 지정하는 건 번거로울 수 있으니 더 자주 사용할 모델로 생성하면 될 것 같다.
 
 ```python
 KhaiiiApi(rsc_dir='리소스 경로')
