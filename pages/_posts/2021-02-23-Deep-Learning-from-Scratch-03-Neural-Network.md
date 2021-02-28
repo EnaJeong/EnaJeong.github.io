@@ -60,7 +60,7 @@ def step_function(x):
 
 ### Sigmoid
 
-$$ \phi(x) = \frac{1}{1 + e^{-x}}$$
+$$ \phi(z) = \frac{1}{1 + e^{-z}}$$
 
 
 ```python
@@ -74,7 +74,7 @@ $$
 y^{relu} =
 \begin{cases}
 0,  & \text{if $z$ < 0} \\
-x, & \text{if $z$ ≥ 0}
+z, & \text{if $z$ ≥ 0}
 \end{cases}
 $$
 
@@ -117,7 +117,7 @@ for i, (title, y) in enumerate(act_funcs.items()):
 
 plt.show()
 ```
-<figure style="overflow:auto">
+<figure class="fixed-img">
   <img src="/assets/images/post/2021-02-23-Activation_Functions.png" alt="Hidden Layer Activation Functions" style="background-color: #888; min-width: 600px;">
 </figure>
 
@@ -137,7 +137,7 @@ plt.show()
 
 ### Softmax
 
-$$y_k = \frac{exp(a_k)}{\sum_{i=1}^{n}exp(a_k)}$$
+$$y_k = \frac{exp(a_k)}{\sum_{i=1}^{n}exp(a_i)}$$
 
 > Softmax 함수는 단조 증가 함수이기 때문에, 원소들의 대소 관계는 Softmax 함수를 적용하기 전과 후가 같다.
 >
