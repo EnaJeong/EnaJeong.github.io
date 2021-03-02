@@ -120,7 +120,7 @@ def plot_decision_function(X, y, clf, ax, title=None):
 
 <br>
 
-![SMOTE](https://imbalanced-learn.org/stable/_images/sphx_glr_plot_illustration_generation_sample_001.png){: style="max-width: 400px;"}
+![SMOTE](https://imbalanced-learn.org/stable/_images/sphx_glr_plot_illustration_generation_sample_001.png){: style="width: 400px;"}
 
 > 출처 : https://imbalanced-learn.org/stable/auto_examples/over-sampling/plot_illustration_generation_sample.html
 
@@ -384,7 +384,7 @@ fig.tight_layout()
 
 ![NearMiss](/assets/images/post/2021-03-01-Near-Miss.png)
 
-> 출처 : https://imbalanced-learn.org/stable/auto_examples/over-sampling/plot_illustration_generation_sample.html
+> 출처 : https://imbalanced-learn.org/stable/auto_examples/under-sampling/plot_illustration_nearmiss.html
 
 ```python
 fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
@@ -416,7 +416,7 @@ fig.tight_layout()
 
 Tomek link는 서로 가장 가까운 이웃이면서 클래스가 다른 데이터 쌍을 의미한다. 이러한 Tomek link를 제거하는 방식이다.
 
-![Tomek Link](https://imbalanced-learn.org/stable/_images/sphx_glr_plot_illustration_tomek_links_001.png){: style="max-width: 400px;"}
+![Tomek Link](https://imbalanced-learn.org/stable/_images/sphx_glr_plot_illustration_tomek_links_001.png){: style="width: 400px;"}
 
 이 때, 기본 설정에서는 다수 클래스에 속하는 데이터만 제거하고, `sampling_strategy='all'`로 설정하면 둘 다 제거한다.
 
@@ -455,11 +455,11 @@ fig.tight_layout()
 
 ###  Edited Data Set Using Nearest Neighbours
 
-`EditedNearestNeighbours` : nearest-neighbors 알고리즘을 적용하고 기준(이웃들이 충분히 같은 클래스인지)을 충족하지 않는 데이터 제거
+`Edited Nearest Neighbours (ENN)` : k-NN을 적용하고 기준(이웃들이 충분히 같은 클래스인지)을 충족하지 않는 데이터 제거
 
-`RepeatedEditedNearestNeighbours` : `EditedNearestNeighbours` 반복
+`Repeated Edited Nearest Neighbours (RENN)` : `ENN` 반복
 
-`AllKNN` : 반복 과정에서 nearest neighbors의 이웃 수가 증가
+`All k-NN (ANN)` : 반복 과정에서 k-NN의 이웃 수가 증가
 
 
 
@@ -515,11 +515,11 @@ fig.tight_layout()
 
 ### Condensed Nearest Neighbors
 
-`CondensedNearestNeighbour` : 1-NN을 반복적으로 적용
+`Condensed Nearest Neighbour (CNN)` : 1-NN을 반복적으로 적용
 
-`OneSidedSelection` : 1-NN을 적용하고 `TomekLinks`을 사용해 잡음 제거
+`One Sided Selection (OSS)` : 1-NN을 적용하고 `TomekLinks`을 사용해 잡음 제거
 
-`NeighbourhoodCleaningRule` : 1-NN을 적용하고 `EditedNearestNeighbours`을 사용해 잡음 제거
+`Neighbourhood Cleaning Rule (NCR)` : 1-NN을 적용하고 `EditedNearestNeighbours`을 사용해 잡음 제거
 
 <br>
 
@@ -532,6 +532,7 @@ fig.tight_layout()
 > 2. 다수 클래스의 데이터를 하나 `STORE`에 추가한다.
 > 3. 나머지 다수 클래스의 데이터들을 하나씩 `STORE`에 있는 데이터들과 1-NN을 적용해서, 분류가 잘못되면 `STORE`에 추가하고 분류가 잘 되면 `GRABBAG`에 추가한다.
 > 4. `GRABBAG`에서 더 이상 옮길 데이터가 없을 때까지 3번을 반복한다. (`GRABBAG`에 데이터가 없거나 3번 과정을 수행하는 동안 이동하는 데이터가 없는 상태)
+> 5. `GRABBAG`에 있는 데이터는 제거하고 `STORE`에 있는 데이터들만 남긴다.
 >
 > [The Condensed Nearest Neighbor Rule](https://ieeexplore.ieee.org/document/1056066)
 
