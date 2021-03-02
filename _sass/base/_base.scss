@@ -147,6 +147,19 @@ pre {
   }
 }
 
+div.highlighter-rouge {
+  position: relative;
+
+  &::after {
+    content: attr(data-lang);
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    color: $code-text-color;
+    font-size: 12px;
+    padding: 1px 6px;
+  }
+}
 
 // blockquote
 blockquote {
@@ -189,10 +202,23 @@ tbody th {font-weight: normal;}
 
 
 // figure
-figure {margin: 1em 0;}
+figure {
+  margin: 1em 0;
+
+  &.fixed-img {
+    overflow: auto;
+  }
+}
 
 img:not(.emoji) {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
+}
+
+
+// MathJax
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
 }

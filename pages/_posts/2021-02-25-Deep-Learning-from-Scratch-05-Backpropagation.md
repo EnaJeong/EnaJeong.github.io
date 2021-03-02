@@ -3,6 +3,8 @@ category: 'Deep Learning'
 title: 밑바닥부터 시작하는 딥러닝 05 오차역전파법
 ---
 
+> 전반적으로 책의 구현과 조금 다르다.
+
 ```python
 import numpy as np
 from collections import OrderedDict
@@ -365,7 +367,11 @@ $$
 
 <br>
 
-$\frac{\partial L}{\partial W}$ 와 $\frac{\partial L}{\partial B}$는 배치의 원소의 편미분값의 합으로 계산한다
+> $\frac{\partial L}{\partial W}$ 와 $\frac{\partial L}{\partial B}$는 배치의 원소의 편미분값의 합으로 계산한다
+>
+> $X^T \cdot \frac{\partial L}{\partial Y}$ 구현을 그대로 유지하려고 하는 것 같다. 뒤에서 구현하는 신경망을 보면 대신 dx 값을 배치의 크기로 나눈다.
+
+<br>
 
 $$
 \frac{\partial L}{\partial W} =
@@ -419,6 +425,8 @@ y_k = \frac{exp(a_k)}{\sum_{i=1}^{n}exp(a_i)}
 \; , \quad
 L = - \sum_k t_k log(y_k)
 $$
+
+<br>
 
 $$
 \frac{\partial L}{\partial y_k} = - \frac{t_k}{y_k}
