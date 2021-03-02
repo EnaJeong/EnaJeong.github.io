@@ -378,9 +378,9 @@ fig.tight_layout()
 
 ### NearMiss
 
-- NearMiss-1 : 다수 클래스의 데이터 중 소수 클래스의 k nearest 데이터와의 평균 거리가 짧은 데이터 제거
-- NearMiss-2 : 다수 클래스의 데이터 중 소수 클래스의 가장 먼 데이터와의 평균 거리가 짧은 데이터 제거
-- NearMiss-3 : 다수 클래스의 데이터의 m nearest 이웃 ->  k nearest 데이터와의 평균 거리가 긴 데이터 선택
+- NearMiss-1 : 다수 클래스의 데이터 중 소수 클래스의 k nearest 데이터와의 평균 거리가 짧은 데이터 선택
+- NearMiss-2 : 다수 클래스의 데이터 중 소수 클래스의 가장 먼 데이터와의 평균 거리가 짧은 데이터 선택
+- NearMiss-3 : 소수 클래스의 데이터의 m nearest 이웃 -> k nearest 데이터와의 평균 거리가 긴 데이터 선택
 
 ![NearMiss](/assets/images/post/2021-03-01-Near-Miss.png)
 
