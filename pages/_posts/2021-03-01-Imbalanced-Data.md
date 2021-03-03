@@ -66,14 +66,6 @@ plt.scatter(X[:, 0], X[:, 1], c=y, alpha=0.8)
 ```
 
 
-
-
-    <matplotlib.collections.PathCollection at 0x1adf7c89a88>
-
-
-
-
-
 ![output ](/assets/images/post/2021-03-01-output_4_1.png){: style="background-color: #888;"}
 
 
@@ -163,9 +155,9 @@ for name, sampler in samplers.items():
 
 
 ```python
-fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
@@ -178,11 +170,11 @@ fig.tight_layout()
 
 
 ```python
-fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
 
 clf = LogisticRegression()
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     clf.fit(X_samples[key], y_samples[key])
     plot_decision_function(X_samples[key], y_samples[key], clf, ax, title=key)
 fig.tight_layout()
@@ -192,7 +184,7 @@ fig.tight_layout()
 
 ![output ](/assets/images/post/2021-03-01-output_21_0.png){: style="background-color: #888;"}
 
-
+> `ADASYN`은 잘못 분류되는 데이터들을 중점적으로 생성하기 때문에, `SMOTE`에 비해 경계에 위치한 데이터들이 더 많이 생성된 것을 확인할 수 있다.
 
 <br>
 
@@ -206,9 +198,9 @@ fig.tight_layout()
 ```python
 shrinkages = [0, 1, 3, 5]
 
-fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
 
-for ax, shrinkage in zip(axs.ravel(), shrinkages):
+for ax, shrinkage in zip(axes.ravel(), shrinkages):
     sampler = RandomOverSampler(shrinkage=shrinkage)
     X_sample, y_sample = sampler.fit_resample(X, y)
     plot_samples(X_sample, y_sample, ax, title=shrinkage)
@@ -221,7 +213,7 @@ fig.tight_layout()
 
 ![output ](/assets/images/post/2021-03-01-output_25_0.png){: style="background-color: #888;"}
 
-
+> `shrinkage`값이 커질수록 데이터의 특징이 사라지고 있다.
 
 <br>
 
@@ -259,9 +251,9 @@ for name, sampler in samplers.items():
 
 
 ```python
-fig, axs = plt.subplots(nrows=2, ncols=3, figsize=(15, 10))
+fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(15, 10))
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
@@ -298,54 +290,23 @@ fig.tight_layout()
 from imblearn.under_sampling import *
 ```
 
-### Random Under-sampling VS. Tomek Links VS. ENN
-
-> 하이브리드에서 Tomek Links와 ENN을 사용하기 때문에 비교 대상으로 삼았다.
-
+### Random Under-sampling
 
 ```python
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10, 5))
+
 X_samples = {'Raw': X}
 y_samples = {'Raw': y}
 
-samplers = {'Random': RandomUnderSampler(),
-            'Tomek': TomekLinks(),
-            'ENN': EditedNearestNeighbours()}
+X_samples['Random'], y_samples['Random'] = RandomUnderSampler().fit_resample(X, y)
 
-for name, sampler in samplers.items():
-    X_samples[name], y_samples[name] = sampler.fit_resample(X, y)
-```
-
-
-```python
-fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
-
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
 
 
-
 ![output ](/assets/images/post/2021-03-01-output_39_0.png){: style="background-color: #888;"}
-
-
-
-
-```python
-fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
-
-clf = LogisticRegression()
-
-for ax, key in zip(axs.ravel(), X_samples.keys()):
-    clf.fit(X_samples[key], y_samples[key])
-    plot_decision_function(X_samples[key], y_samples[key], clf, ax, title=key)
-fig.tight_layout()
-```
-
-
-
-![output ](/assets/images/post/2021-03-01-output_40_0.png){: style="background-color: #888;"}
-
 
 
 <br>
@@ -356,14 +317,14 @@ fig.tight_layout()
 
 
 ```python
-fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(10, 5))
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10, 5))
 
 X_samples = {'Raw': X}
 y_samples = {'Raw': y}
 
 X_samples['Cluster Centroids'], y_samples['Cluster Centroids'] = ClusterCentroids().fit_resample(X, y)
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
@@ -387,7 +348,7 @@ fig.tight_layout()
 > 출처 : https://imbalanced-learn.org/stable/auto_examples/under-sampling/plot_illustration_nearmiss.html
 
 ```python
-fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
 
 X_samples = {'Raw': X}
 y_samples = {'Raw': y}
@@ -399,7 +360,7 @@ samplers = {'NearMiss-1': NearMiss(),
 for name, sampler in samplers.items():
     X_samples[name], y_samples[name] = sampler.fit_resample(X, y)
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
@@ -429,7 +390,7 @@ Tomek link는 서로 가장 가까운 이웃이면서 클래스가 다른 데이
 
 
 ```python
-fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
+fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
 
 X_samples = {'Raw': X}
 y_samples = {'Raw': y}
@@ -440,7 +401,7 @@ samplers = {'Tomek - auto': TomekLinks(),
 for name, sampler in samplers.items():
     X_samples[name], y_samples[name] = sampler.fit_resample(X, y)
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
@@ -464,7 +425,7 @@ fig.tight_layout()
 
 
 ```python
-fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
+fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
 
 X_samples = {'Raw': X}
 y_samples = {'Raw': y}
@@ -475,7 +436,7 @@ samplers = {'ENN - auto': EditedNearestNeighbours(),
 for name, sampler in samplers.items():
     X_samples[name], y_samples[name] = sampler.fit_resample(X, y)
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
@@ -488,7 +449,7 @@ fig.tight_layout()
 
 
 ```python
-fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
 
 X_samples = {'Raw': X}
 y_samples = {'Raw': y}
@@ -500,7 +461,7 @@ samplers = {'ENN': EditedNearestNeighbours(),
 for name, sampler in samplers.items():
     X_samples[name], y_samples[name] = sampler.fit_resample(X, y)
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
@@ -508,6 +469,85 @@ fig.tight_layout()
 
 
 ![output ](/assets/images/post/2021-03-01-output_58_0.png){: style="background-color: #888;"}
+
+
+
+<br>
+
+### Instance Hardness Threshold
+
+분류기의 예측 결과 확률이 낮은 데이터 제거
+
+
+```python
+fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
+
+X_samples = {'Raw': X}
+y_samples = {'Raw': y}
+
+samplers = {'Random Forest': InstanceHardnessThreshold(),  # default
+            'Logistic Regression': InstanceHardnessThreshold(estimator=LogisticRegression())}
+
+for name, sampler in samplers.items():
+    X_samples[name], y_samples[name] = sampler.fit_resample(X, y)
+
+for ax, key in zip(axes.ravel(), X_samples.keys()):
+    plot_samples(X_samples[key], y_samples[key], ax, title=key)
+fig.tight_layout()
+```
+
+
+
+![output ](/assets/images/post/2021-03-01-output_62_0.png){: style="background-color: #888;"}
+
+
+
+<br>
+
+### Tomek Links VS. ENN VS. IHT
+
+> 경계의 데이터들을 제거하는 기법들로, 하이브리드에서 `Tomek Links`와 `ENN`을 사용하기 때문에 비교해 보았다.
+
+```python
+X_samples = {}
+y_samples = {}
+
+samplers = {'Tomek': TomekLinks(),
+            'ENN': EditedNearestNeighbours(),
+            'IHT': InstanceHardnessThreshold()}
+
+for name, sampler in samplers.items():
+    X_samples[name], y_samples[name] = sampler.fit_resample(X, y)
+```
+
+```python
+fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
+
+for ax, key in zip(axes.ravel(), X_samples.keys()):
+    plot_samples(X_samples[key], y_samples[key], ax, title=key)
+fig.tight_layout()
+```
+
+
+
+![output ](/assets/images/post/2021-03-01-output_65_0.png){: style="background-color: #888;"}
+
+
+
+```python
+fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
+
+clf = LogisticRegression()
+
+for ax, key in zip(axes.ravel(), X_samples.keys()):
+    clf.fit(X_samples[key], y_samples[key])
+    plot_decision_function(X_samples[key], y_samples[key], clf, ax, title=key)
+fig.tight_layout()
+```
+
+
+
+![output ](/assets/images/post/2021-03-01-output_66_0.png){: style="background-color: #888;"}
 
 
 
@@ -547,7 +587,7 @@ fig.tight_layout()
 
 
 ```python
-fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
 
 X_samples = {'Raw': X}
 y_samples = {'Raw': y}
@@ -559,37 +599,7 @@ samplers = {'Condensed Nearest Neighbour': CondensedNearestNeighbour(),
 for name, sampler in samplers.items():
     X_samples[name], y_samples[name] = sampler.fit_resample(X, y)
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
-    plot_samples(X_samples[key], y_samples[key], ax, title=key)
-fig.tight_layout()
-```
-
-
-
-![output ](/assets/images/post/2021-03-01-output_64_0.png){: style="background-color: #888;"}
-
-
-
-<br>
-
-### Instance Hardness Threshold
-
-분류기의 예측 결과 확률이 낮은 데이터 제거
-
-
-```python
-fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
-
-X_samples = {'Raw': X}
-y_samples = {'Raw': y}
-
-samplers = {'Random Forest': InstanceHardnessThreshold(),  # default
-            'Logistic Regression': InstanceHardnessThreshold(estimator=LogisticRegression())}
-
-for name, sampler in samplers.items():
-    X_samples[name], y_samples[name] = sampler.fit_resample(X, y)
-
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
@@ -602,14 +612,15 @@ fig.tight_layout()
 
 <br>
 
-## Hybrid Sampling
 
-> `SMOTE`를 통해 생성된 잡음이 낀 샘플을 undersampling을 거쳐 잡음을 제거
+## Hybrid Sampling
 
 | Method | Description |
 |:----------:|:----------------------------------------------------------|
 | SMOTEENN   | Over-sampling using SMOTE and cleaning using ENN.         |
 | SMOTETomek | Over-sampling using SMOTE and cleaning using Tomek links. |
+
+> `SMOTE`를 통해 생성된 잡음이 낀 샘플을 undersampling을 거쳐 잡음을 제거
 
 <br>
 
@@ -632,9 +643,9 @@ X_samples['SMOTE + ENN'], y_samples['SMOTE + ENN'] = SMOTEENN(random_state=RANDO
 
 
 ```python
-fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
@@ -663,9 +674,9 @@ X_sample, y_sample = SMOTE(random_state=RANDOM_STATE).fit_resample(X, y)
 X_samples['SMOTE -> Tomek'], y_samples['SMOTE -> Tomek'] = TomekLinks(sampling_strategy='all').fit_resample(X_sample, y_sample)
 X_samples['SMOTE -> ENN'], y_samples['SMOTE -> ENN'] = EditedNearestNeighbours(sampling_strategy='all').fit_resample(X_sample, y_sample)
 
-fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
 
-for ax, key in zip(axs.ravel(), X_samples.keys()):
+for ax, key in zip(axes.ravel(), X_samples.keys()):
     plot_samples(X_samples[key], y_samples[key], ax, title=key)
 fig.tight_layout()
 ```
