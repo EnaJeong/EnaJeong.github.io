@@ -190,7 +190,7 @@ fig.tight_layout()
 
 ### Random Over-sampling
 
-- `shrinkage` : Parameter controlling the shrinkage applied to the covariance matrix.
+- `shrinkage` : 원 데이터가 숫자형 데이터인 경우에 새로 생성되는 데이터의 분산을 제어하는 매개변수
 
 > smoothed bootstrap 생성을 위해 사용
 
@@ -245,11 +245,6 @@ for name, sampler in samplers.items():
     X_samples[name], y_samples[name] = sampler.fit_resample(X, y)
 ```
 
-    C:\Users\gekri\Anaconda3\envs\AI_dev_env\lib\site-packages\sklearn\cluster\_kmeans.py:888: UserWarning: MiniBatchKMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can prevent it by setting batch_size >= 2048 or by setting the environment variable OMP_NUM_THREADS=1
-      f"MiniBatchKMeans is known to have a memory leak on "
-
-
-
 ```python
 fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(15, 10))
 
@@ -292,6 +287,8 @@ from imblearn.under_sampling import *
 
 ### Random Under-sampling
 
+다수 클래스에서 랜덤하게 데이터를 제거해 소수 클래스의 개수와 맞춰준다.
+
 ```python
 fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10, 5))
 
@@ -313,7 +310,7 @@ fig.tight_layout()
 
 ### Cluster Centroids
 
-다른 알고리즘들과 달리 `ClusterCentroids`는 원 데이터에서 선택하는 것이 아니라 K-means를 통해 데이터를 생성한다. (K-means의 중심)
+다른 알고리즘들과 달리 `ClusterCentroids`는 원 데이터에서 선택하는 것이 아니라 K-means를 통해 새로운 데이터를 생성한다. (K-means의 중심)
 
 
 ```python
@@ -339,9 +336,11 @@ fig.tight_layout()
 
 ### NearMiss
 
-- NearMiss-1 : 다수 클래스의 데이터 중 소수 클래스의 k nearest 데이터와의 평균 거리가 짧은 데이터 선택
-- NearMiss-2 : 다수 클래스의 데이터 중 소수 클래스의 가장 먼 데이터와의 평균 거리가 짧은 데이터 선택
-- NearMiss-3 : 소수 클래스의 데이터의 m nearest 이웃 -> k nearest 데이터와의 평균 거리가 긴 데이터 선택
+`Near Miss-1` : 다수 클래스의 데이터 중 소수 클래스의 k nearest 데이터와의 평균 거리가 짧은 데이터 선택
+
+`NearMiss-2` : 다수 클래스의 데이터 중 소수 클래스의 가장 먼 데이터와의 평균 거리가 짧은 데이터 선택
+
+`NearMiss-3` : 소수 클래스 데이터의 m nearest 이웃인 다수 클래스 데이터 중에서 소수 클래스의 k nearest 데이터와의 평균 거리가 긴 데이터 선택
 
 ![NearMiss](/assets/images/post/2021-03-01-Near-Miss.png)
 
@@ -688,3 +687,5 @@ fig.tight_layout()
 
 
 > 결과가 같은 것을 확인할 수 있다.
+
+> 이러한 방법으로 `imblearn`에서 함수로 제공하지 않는 조합도 생성 가능하다.

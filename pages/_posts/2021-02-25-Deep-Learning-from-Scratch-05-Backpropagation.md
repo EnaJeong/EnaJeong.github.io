@@ -336,13 +336,13 @@ $$
 
 <br>
 
-> W : (n, m) , B : (m, ) , X : (N, n) , Y : (m, N)
+> W : (n, m) , B : (m, ) , X : (N, n) , Y : (N, m)
 
 - N : 배치 사이즈
 - n : 입력값 개수
 - m : 출력값 개수
 
-> B의 경우 Numpy의 broadcasting으로 인해 (m, ) → (1, m) → (N, 6) 형태로 연산을 수행한다.
+> B의 경우 Numpy의 broadcasting으로 인해 (m, ) → (1, m) → (N, m) 형태로 연산을 수행한다.
 
 <br>
 
