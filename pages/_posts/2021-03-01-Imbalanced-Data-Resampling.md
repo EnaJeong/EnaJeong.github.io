@@ -43,7 +43,7 @@ plt.show()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_3_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_3_0.png){: style="background-color: #888;"}
 
 
 
@@ -66,7 +66,7 @@ plt.scatter(X[:, 0], X[:, 1], c=y, alpha=0.8)
 ```
 
 
-![output ](/assets/images/post/2021-03-01-output_4_1.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_4_1.png){: style="background-color: #888;"}
 
 
 
@@ -164,7 +164,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_20_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_20_0.png){: style="background-color: #888;"}
 
 
 
@@ -182,7 +182,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_21_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_21_0.png){: style="background-color: #888;"}
 
 > `ADASYN`은 잘못 분류되는 데이터들을 중점적으로 생성하기 때문에, `SMOTE`에 비해 경계에 위치한 데이터들이 더 많이 생성된 것을 확인할 수 있다.
 
@@ -211,7 +211,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_25_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_25_0.png){: style="background-color: #888;"}
 
 > `shrinkage`값이 커질수록 데이터의 특징이 사라지고 있다.
 
@@ -255,7 +255,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_30_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_30_0.png){: style="background-color: #888;"}
 
 
 
@@ -303,7 +303,7 @@ fig.tight_layout()
 ```
 
 
-![output ](/assets/images/post/2021-03-01-output_39_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_39_0.png){: style="background-color: #888;"}
 
 
 <br>
@@ -328,7 +328,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_44_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_44_0.png){: style="background-color: #888;"}
 
 
 
@@ -366,7 +366,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_49_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_49_0.png){: style="background-color: #888;"}
 
 
 
@@ -407,7 +407,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_53_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_53_0.png){: style="background-color: #888;"}
 
 
 
@@ -442,7 +442,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_57_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_57_0.png){: style="background-color: #888;"}
 
 
 
@@ -467,7 +467,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_58_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_58_0.png){: style="background-color: #888;"}
 
 
 
@@ -497,7 +497,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_62_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_62_0.png){: style="background-color: #888;"}
 
 
 
@@ -529,7 +529,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_65_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_65_0.png){: style="background-color: #888;"}
 
 
 
@@ -546,7 +546,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_66_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_66_0.png){: style="background-color: #888;"}
 
 
 
@@ -605,7 +605,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_68_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_68_0.png){: style="background-color: #888;"}
 
 
 
@@ -651,7 +651,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_76_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_76_0.png){: style="background-color: #888;"}
 
 
 
@@ -682,7 +682,7 @@ fig.tight_layout()
 
 
 
-![output ](/assets/images/post/2021-03-01-output_79_0.png){: style="background-color: #888;"}
+![output](/assets/images/post/2021-03-01-output_79_0.png){: style="background-color: #888;"}
 
 
 
